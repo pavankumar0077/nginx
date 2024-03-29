@@ -146,6 +146,43 @@ FYI
 --
 ### MTLS -- TYEP OF TLS WHICH IS USED FOR SERVICES IN KUBERNETES 
 
+Host React Application
+--
+- Need to build the react project ``` npm run build ```
+- WE WILL GET **BUILD** OR **DIST** FOLDER
+- WE NEED THAT DIST FOLDER EITHER WE COPY IT FROM LOCAL TO SERVER OR PUSH TO GITHUB AND DONWLOAD FROM HERE
+- ![image](https://github.com/pavankumar0077/nginx/assets/40380941/1f560787-2be4-469a-ae68-067c39cb0759)
+
+React app conf
+--
+- ![image](https://github.com/pavankumar0077/nginx/assets/40380941/6a409c58-cb9c-4ec6-b1ec-a44328011d9a)
+- change to react app build or dist application location.
+
+404 ERROR IN REACT APP
+--
+- Let say for example if we have used other route which is not there in the application like /abc then it will show 404 error instaed of going to HOME PAGE.
+- To fix this issue we need to add try_files index.html.
+- ![image](https://github.com/pavankumar0077/nginx/assets/40380941/c3cb891f-428b-424e-be5b-32b3d5854fb8)
+- THis problem occures bec'z of client side application will work fine. If we have REFRESHED THE PAGE IN ONE ROUTE THEN WE WILL GET ERROR.
+
+TSL CONGIFURATIONS
+--
+-- ``` https://certbot.eff.org/ ```
+- RUN THE COMMANDS EXACTLY TO AUTO-CONG BY NGINX.
+
+NOTE :
+- IF WE ARE USING WEB SOCKET IN APPLICATION THEN WE HAVE ADDITONAL CONFIGURATIONS
+- Basically WEB-SOCKET WORKS OF HTTP, THAT IS THE REASON WE NEED ADDITION CONF
+- ``` https://www.nginx.com/blog/websocket-nginx/ ```
+
+```
+location /wsapp/ {
+    proxy_pass http://wsbackend;
+    proxy_http_version 1.1;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection "Upgrade";
+    proxy_set_header Host $host;
+}
+```
 
 
-- 
