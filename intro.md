@@ -43,9 +43,15 @@ server {
 
 ```
 - Here we are making 80 as default_server if any other server block is not catching request, default server block will serve it.
-- Here server_name is "_", that means, Our localhost, ip or _ means it will take all.
+- Here server_name is "_", that means, Our localhost, ip or _ means it will take all. ( Like from any domain )
 - in place of location we can give like api path for example location /api, or location /login (login limit rete) something like that. we can serve is seperately based on the location.
 - In location even we can use REGULAR EXPRESSIONS like location ~ or we can use exact match like location =
 - try_files $uri $uri/ =404; means for example if we have www.example1.com/products --- uri -- products. So nginx will first check with uri wiht root if it is not found then it will return 404 ERROR. in general if we don't have that route if get is type of error in most of the websites.
 
+- So in general, We need to add domain.com.conf in the cond folder and in the config file in server_name we need to give same name like domain.com.conf
+- Browser will check for http headers for the host, AT that time it will check and match both are same or not
 
+FYI
+--
+- We can give name to github repo clone : Like this as well -- sudo git clone https://github.com/coder/code1/git code-base
+- Here code-base is the name what i have given instead of we get name from the github repo. 
