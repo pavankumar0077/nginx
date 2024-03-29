@@ -11,7 +11,7 @@ NGINX CAN BE USED AS
 
 ![image](https://github.com/pavankumar0077/nginx/assets/40380941/62fc9931-958e-49dd-b37e-898165bd3229)
 
-NGINX DOC REF : ``` https://nginx.org/en/docs/ ```
+NGINX DOC REF : ``` https://nginx.org/en/docs/ ``` & ``` https://nginx.org/en/docs/http/request_processing.html ```
 
 NOTE :
 --
